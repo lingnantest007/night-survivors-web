@@ -1,0 +1,128 @@
+{
+  "screen": { "width": 390, "height": 700 },
+  "dt": 0.016666666666666666,
+  "goal_time_seconds": 120,
+  "hero": {
+    "speed": 120,
+    "hp": 100,
+    "hit_radius": 12,
+    "magnet_radius": 60,
+    "mouse_deadzone_px": 12
+  },
+  "weapons": {
+    "spark_wand": {
+      "name": "Spark Wand",
+      "short": "Spark",
+      "card_text": "Shoots a spark at the nearest enemy",
+      "damage": 10,
+      "interval": 0.8,
+      "count": 1,
+      "speed": 400,
+      "radius": 5,
+      "level_up": { "damage": 3, "interval": -0.08, "extra_count_at_levels": [3, 5] }
+    },
+    "spin_blades": {
+      "name": "Spin Blades",
+      "short": "Blades",
+      "card_text": "Blades circle around you",
+      "damage": 8,
+      "count": 2,
+      "orbit_radius": 60,
+      "radius": 12,
+      "turn_seconds": 1.5,
+      "hit_cooldown": 0.5,
+      "level_up": { "damage": 3, "extra_count_at_levels": [2, 4] }
+    },
+    "holy_ring": {
+      "name": "Holy Ring",
+      "short": "Ring",
+      "card_text": "Hurts enemies close to you",
+      "damage": 5,
+      "radius": 50,
+      "interval": 0.5,
+      "level_up": { "damage": 2, "radius": 10 }
+    }
+  },
+  "passives": {
+    "swift_boots": { "name": "Swift Boots", "short": "Boots", "card_text": "+10% walking speed", "speed_pct": 0.1 },
+    "big_heart": { "name": "Big Heart", "short": "Heart", "card_text": "+20 max HP and heal 20", "max_hp": 20, "heal": 20 },
+    "magnet": { "name": "Magnet", "short": "Magnet", "card_text": "+30 px gem magnet", "magnet_radius": 30 }
+  },
+  "max_weapons": 3,
+  "max_item_level": 5,
+  "level_up_xp_first": 5,
+  "level_up_xp_step": 3,
+  "heal_card_amount": 30,
+  "gem_speed": 300,
+  "enemies": {
+    "bat":   { "name": "Bat",   "hp": 8,   "speed": 100, "damage": 5,  "xp": 1, "radius": 10 },
+    "slime": { "name": "Slime", "hp": 30,  "speed": 55,  "damage": 8,  "xp": 2, "radius": 12 },
+    "ghost": { "name": "Ghost", "hp": 15,  "speed": 135, "damage": 6,  "xp": 2, "radius": 10 },
+    "demon": { "name": "Demon", "hp": 800, "speed": 85,  "damage": 20, "xp": 0, "radius": 20, "boss": true }
+  },
+  "contact_damage_cooldown": 0.5,
+  "spawn_circle_radius": 380,
+  "spawn_check_interval": 1.0,
+  "spawn_max_per_check": 8,
+  "max_alive_enemies": 120,
+  "despawn_distance": 700,
+  "boss_return_distance": 600,
+  "waves": [
+    { "from": 0,   "types": ["bat"],               "min_alive": 12 },
+    { "from": 15,  "types": ["bat"],               "min_alive": 20 },
+    { "from": 30,  "types": ["bat", "slime"],      "min_alive": 28 },
+    { "from": 45,  "types": ["slime", "ghost"],    "min_alive": 36 },
+    { "from": 60,  "types": ["bat", "ghost"],      "min_alive": 45 },
+    { "from": 75,  "types": ["bat", "slime", "ghost"], "min_alive": 55 },
+    { "from": 90,  "types": ["bat", "slime"],      "min_alive": 55, "boss": "demon" },
+    { "from": 105, "types": ["bat"],               "min_alive": 75 }
+  ],
+  "feel": {
+    "shake_px": 6,
+    "shake_seconds": 0.18,
+    "number_life_seconds": 0.7,
+    "number_rise_px": 26,
+    "flash_life_seconds": 0.15,
+    "flash_radius_px": 18,
+    "max_numbers": 40
+  },
+  "sounds": ["hit", "gem", "level_up", "hurt", "end"],
+  "colors": {
+    "spark": [255, 224, 89],
+    "hp_fill": [220, 70, 70],
+    "hp_back": [80, 40, 40],
+    "xp_fill": [90, 140, 255],
+    "xp_back": [40, 50, 80],
+    "text": [235, 235, 235],
+    "card": [40, 44, 58],
+    "card_border": [120, 130, 160],
+    "ring": [180, 200, 255],
+    "ring_flash": [255, 255, 255],
+    "overlay": [15, 15, 22],
+    "number": [255, 255, 255],
+    "number_hurt": [255, 90, 90],
+    "flash": [255, 240, 200]
+  },
+  "pictures": {
+    "hero": "hero.png",
+    "bat": "bat.png",
+    "slime": "slime.png",
+    "ghost": "ghost.png",
+    "demon": "demon.png",
+    "floor": "floor.png",
+    "sword": "sword.png",
+    "gem_1": "gem_blue.png",
+    "gem_2": "gem_pink.png"
+  },
+  "picture_px": {
+    "hero": 34,
+    "bat": 30,
+    "slime": 34,
+    "ghost": 30,
+    "demon": 60,
+    "floor": 48,
+    "sword": 26,
+    "gem_1": 22,
+    "gem_2": 22
+  }
+}
